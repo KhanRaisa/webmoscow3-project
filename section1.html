@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Списки - WebMoscow</title>
+    <!-- Добавьте эти строки в <head> КАЖДОЙ страницы -->
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+    <div class="container header-content">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTEyIDJMMiA3bDEwIDUgMTAtNS0xMC01em0wIDE3TDkgMTV2LTRoNnY0bC0zIDJ6Ii8+PC9zdmc+" alt="Логотип">
+            </a>
+            <h1>WebMoscow</h1>
+        </div>
+        <div class="external-links">
+            <a href="https://github.com/vmarshirov/g06u28/tree/main/010_html/060_anchor" target="_blank">Примеры на GitHub</a>
+            <a href="https://developer.mozilla.org/ru/docs/Web/HTML" target="_blank">Документация HTML</a>
+        </div>
+    </div>
+</header>
+    
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="section1.html">Списки</a></li>
+                <li><a href="section2.html">Изображения</a></li>
+                <li><a href="section3.html">Галерея</a></li>
+                <li><a href="section4.html">Команда</a></li>
+                <li><a href="contact-form.html">Формы</a></li>
+                <li><a href="algorithm.html">Алгоритм</a></li>
+                <li><a href="dom-js.html">DOM_JS</a></li>
+                <li><a href="cyrillic-to-latin.html">Кириллица-Латиница</a></li>
+                <li><a href="services.html">Услуги</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <h1 class="page-title">Списки: Типы списков в HTML</h1>
+        
+        <div class="content-section">
+            <h2>Нумерованные списки</h2>
+            <div class="numbered-list">
+                <h3>Технологии веб-разработки</h3>
+                <ol>
+                    <li><strong>HTML</strong> - язык разметки для создания структуры веб-страниц</li>
+                    <li><strong>CSS</strong> - каскадные таблицы стилей для оформления</li>
+                    <li><strong>JavaScript</strong> - язык программирования для интерактивности</li>
+                    <li><strong>PHP</strong> - серверный язык для backend-разработки</li>
+                    <li><strong>MySQL</strong> - система управления базами данных</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Маркированные списки</h2>
+            <div class="bulleted-list">
+                <h3>Наши услуги</h3>
+                <ul>
+                    <li>Разработка веб-сайтов любой сложности</li>
+                    <li>Создание мобильных приложений</li>
+                    <li>Дизайн пользовательских интерфейсов (UI/UX)</li>
+                    <li>Оптимизация производительности сайтов</li>
+                    <li>Техническая поддержка и сопровождение</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Вложенные списки</h2>
+            <div class="nested-list">
+                <h3>Структура компании</h3>
+                <ul>
+                    <li>Отдел разработки
+                        <ul>
+                            <li>Frontend-разработчики
+                                <ul>
+                                    <li>React-разработчики</li>
+                                    <li>Vue-разработчики</li>
+                                    <li>Angular-разработчики</li>
+                                </ul>
+                            </li>
+                            <li>Backend-разработчики
+                                <ul>
+                                    <li>Node.js разработчики</li>
+                                    <li>Python разработчики</li>
+                                    <li>PHP разработчики</li>
+                                </ul>
+                            </li>
+                            <li>DevOps-инженеры</li>
+                        </ul>
+                    </li>
+                    <li>Отдел дизайна
+                        <ul>
+                            <li>UI-дизайнеры</li>
+                            <li>UX-дизайнеры</li>
+                            <li>Графические дизайнеры</li>
+                        </ul>
+                    </li>
+                    <li>Отдел маркетинга
+                        <ul>
+                            <li>SEO специалисты</li>
+                            <li>Контент-менеджеры</li>
+                            <li>SMM специалисты</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2025 WebMoscow. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="index.html">Главная</a>
+                <a href="privacy.html">Политика конфиденциальности</a>
+                <a href="terms.html">Условия использования</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Формы - WebMoscow</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTEyIDJMMiA3bDEwIDUgMTAtNS0xMC01em0wIDE3TDkgMTV2LTRoNnY0bC0zIDJ6Ii8+PC9zdmc+" alt="Логотип">
+                </a>
+                <h1>WebMoscow</h1>
+            </div>
+            <div class="external-links">
+                <a href="https://github.com/vmarshirov/g06u28/tree/main/010_html/060_anchor" target="_blank">Примеры на GitHub</a>
+                <a href="https://github.com/vmarshirov/g06u28/tree/main/010_html/050_forms" target="_blank">Примеры форм</a>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="section1.html">Списки</a></li>
+                <li><a href="section2.html">Изображения</a></li>
+                <li><a href="section3.html">Галерея</a></li>
+                <li><a href="section4.html">Команда</a></li>
+                <li><a href="contact-form.html" class="active">Формы</a></li>
+                <li><a href="algorithm.html">Алгоритм</a></li>
+                <li><a href="dom-js.html">DOM_JS</a></li>
+                <li><a href="cyrillic-to-latin.html">Кириллица-Латиница</a></li>
+                <li><a href="services.html">Услуги</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <h1 class="page-title">Формы обратной связи и заказа</h1>
+        
+        <!-- Внутренняя навигация по странице -->
+        <div class="page-navigation">
+            <ul>
+                <li><a href="#contact-form">Форма контактов</a></li>
+                <li><a href="#order-form">Форма заказа</a></li>
+            </ul>
+        </div>
+
+        <!-- Форма для контактных данных -->
+        <div id="contact-form" class="content-section">
+            <h2>Форма контактных данных</h2>
+            <p>Заполните эту форму, чтобы отправить нам свои контактные данные. Мы свяжемся с вами в ближайшее время.</p>
+            
+            <form id="contactForm" class="contact-form" method="GET" action="#" onsubmit="return handleContactSubmit(this)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="lastname">Фамилия *</label>
+                        <input type="text" id="lastname" name="lastname" class="form-control" required 
+                               placeholder="Введите вашу фамилию">
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname">Имя *</label>
+                        <input type="text" id="firstname" name="firstname" class="form-control" required
+                               placeholder="Введите ваше имя">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="group">Группа/Организация *</label>
+                        <input type="text" id="group" name="group" class="form-control" required
+                               placeholder="Название группы или организации">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Мобильный телефон *</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required
+                               placeholder="+7 (XXX) XXX-XX-XX"
+                               pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Электронная почта *</label>
+                    <input type="email" id="email" name="email" class="form-control" required
+                           placeholder="your@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Сообщение</label>
+                    <textarea id="message" name="message" class="form-control" rows="4"
+                              placeholder="Опишите цель вашего обращения..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Предпочтительный способ связи</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="contact-phone" name="contact_method" value="phone" checked>
+                            <label for="contact-phone">Телефонный звонок</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="contact-email" name="contact_method" value="email">
+                            <label for="contact-email">Электронная почта</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="contact-telegram" name="contact_method" value="telegram">
+                            <label for="contact-telegram">Telegram</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked>
+                        <label for="newsletter">Подписаться на рассылку новостей и акций</label>
+                    </div>
+                </div>
+                
+                <!-- Скрытые поля -->
+                <input type="hidden" name="form_type" value="contact">
+                <input type="hidden" name="source" value="website">
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn">Отправить контактные данные</button>
+                    <button type="reset" class="btn btn-reset">Очистить форму</button>
+                </div>
+                
+                <p class="form-note">* Поля, отмеченные звездочкой, обязательны для заполнения</p>
+            </form>
+        </div>
+
+        <!-- Форма для заказа услуг -->
+        <div id="order-form" class="content-section">
+            <h2>Форма заказа услуг</h2>
+            <p>Используйте эту форму для оформления заказа на наши услуги. После получения заявки мы подготовим коммерческое предложение.</p>
+            
+            <form id="orderForm" class="order-form" method="GET" action="#" onsubmit="return handleOrderSubmit(this)">
+                <div class="form-group">
+                    <label for="service-type">Тип услуги *</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="website" name="service_type" value="website" required>
+                            <label for="website">Разработка сайта</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="app" name="service_type" value="app">
+                            <label for="app">Мобильное приложение</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="design" name="service_type" value="design">
+                            <label for="design">UI/UX дизайн</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="seo" name="service_type" value="seo">
+                            <label for="seo">SEO оптимизация</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="consulting" name="service_type" value="consulting">
+                            <label for="consulting">Технический консалтинг</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="budget">Бюджет (руб.) *</label>
+                        <input type="number" id="budget" name="budget" class="form-control" 
+                               min="10000" max="10000000" step="1000" required
+                               placeholder="от 10,000 руб.">
+                        <p class="form-note">Минимальный бюджет: 10,000 рублей</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline">Желаемый срок завершения *</label>
+                        <input type="date" id="deadline" name="deadline" class="form-control" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-name">Название проекта *</label>
+                    <input type="text" id="project-name" name="project_name" class="form-control" required
+                           placeholder="Краткое название вашего проекта">
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Описание проекта *</label>
+                    <textarea id="description" name="description" class="form-control" rows="4" required
+                              placeholder="Подробно опишите задачи и требования к проекту..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Дополнительные услуги</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="seo-opt" name="additional_services" value="seo">
+                            <label for="seo-opt">SEO оптимизация</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hosting" name="additional_services" value="hosting">
+                            <label for="hosting">Хостинг и домен</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="support" name="additional_services" value="support">
+                            <label for="support">Техническая поддержка</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="training" name="additional_services" value="training">
+                            <label for="training">Обучение персонала</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="analytics" name="additional_services" value="analytics">
+                            <label for="analytics">Веб-аналитика</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company-size">Размер компании</label>
+                        <select id="company-size" name="company_size" class="form-control">
+                            <option value="">Выберите размер компании</option>
+                            <option value="startup">Стартап (1-10 человек)</option>
+                            <option value="small">Малый бизнес (11-50 человек)</option>
+                            <option value="medium">Средний бизнес (51-250 человек)</option>
+                            <option value="large">Крупный бизнес (250+ человек)</option>
+                            <option value="enterprise">Корпорация</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="industry">Отрасль</label>
+                        <select id="industry" name="industry" class="form-control">
+                            <option value="">Выберите отрасль</option>
+                            <option value="it">IT и технологии</option>
+                            <option value="retail">Розничная торговля</option>
+                            <option value="finance">Финансы и банкинг</option>
+                            <option value="education">Образование</option>
+                            <option value="healthcare">Здравоохранение</option>
+                            <option value="manufacturing">Производство</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Пароль для доступа к обсуждению проекта *</label>
+                    <input type="password" id="password" name="password" class="form-control" required
+                           placeholder="Создайте пароль"
+                           minlength="6">
+                    <p class="form-note">Пароль должен содержать не менее 6 символов</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password">Подтверждение пароля *</label>
+                    <input type="password" id="confirm-password" name="confirm_password" class="form-control" required
+                           placeholder="Повторите пароль">
+                </div>
+                
+                <!-- Скрытые поля -->
+                <input type="hidden" name="form_type" value="order">
+                <input type="hidden" name="source" value="website">
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn">Отправить заказ</button>
+                    <button type="reset" class="btn btn-reset">Очистить форму</button>
+                </div>
+                
+                <p class="form-note">* Поля, отмеченные звездочкой, обязательны для заполнения</p>
+            </form>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2025 WebMoscow. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="index.html">Главная</a>
+                <a href="privacy.html">Политика конфиденциальности</a>
+                <a href="terms.html">Условия использования</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleContactSubmit(form) {
+            // Валидация формы
+            if (!form.checkValidity()) {
+                alert('Пожалуйста, заполните все обязательные поля правильно.');
+                return false;
+            }
+            
+            // Создаем URL с параметрами
+            const formData = new FormData(form);
+            const params = new URLSearchParams(formData);
+            
+            // Перенаправляем на страницу с параметрами в URL
+            window.location.href = `contact-form.html?${params.toString()}`;
+            
+            return false; // Предотвращаем стандартную отправку формы
+        }
+
+        function handleOrderSubmit(form) {
+            // Валидация формы
+            if (!form.checkValidity()) {
+                alert('Пожалуйста, заполните все обязательные поля правильно.');
+                return false;
+            }
+            
+            // Проверка пароля
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirm-password');
+            
+            if (password.value !== confirmPassword.value) {
+                alert('Пароли не совпадают!');
+                return false;
+            }
+            
+            // Создаем URL с параметрами
+            const formData = new FormData(form);
+            const params = new URLSearchParams(formData);
+            
+            // Перенаправляем на страницу с параметрами в URL
+            window.location.href = `contact-form.html?${params.toString()}`;
+            
+            return false; // Предотвращаем стандартную отправку формы
+        }
+
+        // Показываем параметры в URL при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.toString()) {
+                alert('Данные успешно отправлены!\nПараметры в URL: ' + window.location.search);
+                
+                // Можно также отобразить параметры на странице
+                console.log('Полученные параметры:', Object.fromEntries(urlParams));
+            }
+        });
+    </script>
+</body>
+</html>
